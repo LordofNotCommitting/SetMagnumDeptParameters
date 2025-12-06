@@ -19,10 +19,13 @@ This mod is primarily a configuration change and does not challange game's natur
 
 So if you wanted faster production please refer to this mod:
 https://steamcommunity.com/sharedfiles/filedetails/?id=3594464943
+
 If you wanted more production per batch:
 https://steamcommunity.com/sharedfiles/filedetails/?id=3595433637
+
 Project speed bonus is not touched since on higher level project time scales exponantially. Please see this mod for instant research:
 https://steamcommunity.com/sharedfiles/filedetails/?id=3383704898
+
 
 As this impact a lot of parameters I'd assume there would be at least few issues on extreme value settings. Please report them here.
 
