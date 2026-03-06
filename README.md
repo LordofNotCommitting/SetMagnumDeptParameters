@@ -31,5 +31,10 @@ As this impact a lot of parameters I'd assume there would be at least few issues
 
 Changelog:
 
+v1.11:
+with 0.9.9. I reset your bramfatura portal parameter because it was broken.
+Also added fridge size parameter. Please do note that if you had big, FULL fridge and then shrink fridge. Your excess item from lost inventory space will probably disappear.
+Also expanded fridge is likely to remain that size even if this mod is removed.
+
 v1.1:
 Drop Pod storage became indefinitely extended forever. So I am setting it to correct size per load basis.
