@@ -27,7 +27,8 @@ namespace SetMagnumDeptParameters
             this.ModData.AddConfigHeader("STRING:Navigation", "Navigation");
             // Navigation - monitoring
             this.ModData.AddConfigValue("Navigation", "about_ND", "STRING:[ <color=#FFFEC1>Navigation - Monitoring</color> ]\n");
-            Data.MagnumDefaultValues.TryGetValue(MagnumParameter.NDCooldownTimeReduce, out temp_result);
+            //Data.MagnumDefaultValues.TryGetValue(MagnumParameter.NDCooldownTimeReduce, out temp_result);
+            temp_result = 30;
             this.ModData.AddConfigValue("Navigation", "Set_NewsDept_Cooldown", (int)temp_result, 1, (int)temp_result, "STRING:Set Monitoring CD", "STRING:Monitoring - Set Monitoring Cooldown");
             this.ModData.AddConfigValue("Navigation", "Set_NewsDept_RewardPointPF", 0, 0, 1000, "STRING:Set Monitoring Reward pt per floor", "STRING:Monitoring - Set Monitoring Reward point per floor");
             this.ModData.AddConfigValue("Navigation", "Set_NewsDept_RepBonus", 0, 0, 100, "STRING:Set Monitoring Rep Bonus", "STRING:Monitoring - Set Monitoring Rep Bonus");
@@ -67,16 +68,19 @@ namespace SetMagnumDeptParameters
             this.ModData.AddConfigValue("Research", "about_MORANL2", "STRING:N/A\n");
             // Research - Travel
             this.ModData.AddConfigValue("Research", "about_BRENG", "STRING:[ <color=#FFFEC1>Research - Travel</color> ]\n");
-            Data.MagnumDefaultValues.TryGetValue(MagnumParameter.BRENGCooldownDuration, out temp_result);
-            this.ModData.AddConfigValue("Research", "Set_BRENGDept_Cooldown", (int)temp_result, 1, (int)temp_result, "STRING:Set Bramfatura Travel CD", "STRING:Travel - Set Bramfatura Travel Cooldown.");
-            this.ModData.AddConfigValue("Research", "Set_BRENGDept_TimeLimit", 600, 600, 6000, "STRING:Set Bramfatura Stay Duration", "STRING:Travel - Set Bramfatura Stay Duration.");
-            this.ModData.AddConfigValue("Research", "Set_BRENGDept_DescentPortalDistance", 32, 1, 32, "STRING:Set Descent Portal Distance", "STRING:Travel - Set Bramfatura Descent Mission Portal Spawn Distance.");
-            this.ModData.AddConfigValue("Research", "Set_BRENGDept_DescentStartFloor", 1, 1, 40, "STRING:Set Descent Starting Floor #", "STRING:Travel - Set Bramfatura Descent Mission Starting Floor #.");
+            //Data.MagnumDefaultValues.TryGetValue(MagnumParameter.BRENGCooldownDuration, out temp_result);
+            temp_result = 336;
+            this.ModData.AddConfigValue("Research", "Set_BRENGDept_Cooldown_Two", (int)temp_result, 1, (int)temp_result, "STRING:Set Bramfatura Travel CD", "STRING:Travel - Set Bramfatura Travel Cooldown.");
+            this.ModData.AddConfigValue("Research", "Set_BRENGDept_TimeLimit_Two", 600, 600, 6000, "STRING:Set Bramfatura Stay Duration", "STRING:Travel - Set Bramfatura Stay Duration.");
+            this.ModData.AddConfigValue("Research", "Set_BRENGDept_DescentPortalDistance_Two", 32, 1, 32, "STRING:Set Descent Portal Distance", "STRING:Travel - Set Bramfatura Descent Mission Portal Spawn Distance.");
+            this.ModData.AddConfigValue("Research", "Set_BRENGDept_DescentStartFloor_Two", 1, 1, 40, "STRING:Set Descent Starting Floor #", "STRING:Travel - Set Bramfatura Descent Mission Starting Floor #.");
 
             this.ModData.AddConfigHeader("STRING:Hanger", "Hanger");
             // Hanger - Capsule
             this.ModData.AddConfigValue("Hanger", "about_AUCAP", "STRING:[ <color=#FFFEC1>Hanger - Capsule</color> ]\n");
-            Data.MagnumDefaultValues.TryGetValue(MagnumParameter.AUCAPCapsuleRestoreSpeed, out temp_result);
+            //Data.MagnumDefaultValues.TryGetValue(MagnumParameter.AUCAPCapsuleRestoreSpeed, out temp_result);
+
+            temp_result = 24;
             this.ModData.AddConfigValue("Hanger", "Set_AUCAPDept_Cooldown", (int)temp_result, 1, (int)temp_result, "STRING:Set Capsule CD", "STRING:Hanger - Set Capsule Cooldown.");
             this.ModData.AddConfigValue("Hanger", "Set_AUCAPDept_Custom_RowValue", 1, 1, 10, "STRING:Set Capsule Row", "STRING:Hanger - Set Capsule Row (default is 1).");
             // Hanger - Shuttle
@@ -84,9 +88,13 @@ namespace SetMagnumDeptParameters
             this.ModData.AddConfigValue("Hanger", "Set_CGSHSTDept_RowValue", 1, 1, 40, "STRING:Set Shuttle Row", "STRING:Shuttle - Set Shuttle Row.");
             // Hanger - Trade
             this.ModData.AddConfigValue("Hanger", "about_TRDSH", "STRING:[ <color=#FFFEC1>Hanger - Trade</color> ]\n");
-            Data.MagnumDefaultValues.TryGetValue(MagnumParameter.TRDSHShuttleRestoreSpeed, out temp_result);
+            //Data.MagnumDefaultValues.TryGetValue(MagnumParameter.TRDSHShuttleRestoreSpeed, out temp_result);
+
+            temp_result = 24;
             this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_Cooldown", (int)temp_result, 1, (int)temp_result, "STRING:Set Trade Shuttle CD", "STRING:Trade - Set Trade Shuttle Cooldown.");
             Data.MagnumDefaultValues.TryGetValue(MagnumParameter.TRDSHShuttleMoveSpeed, out temp_result);
+
+            temp_result = 96;
             this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_TravelSpeed", (int)temp_result, 1, (int)temp_result, "STRING:Set Trade Shuttle MoveTime", "STRING:Trade - Set Trade Shuttle Delivery Time.");
 
             this.ModData.AddConfigHeader("STRING:Cloning", "Cloning");
@@ -110,9 +118,12 @@ namespace SetMagnumDeptParameters
             this.ModData.AddConfigValue("Supply", "Set_PUBGDept_FoodMedsValue", 1, -2, 10, "STRING:Set Food/Med Gain", "STRING:Scavengers - Set Food/Med Gain.");
             this.ModData.AddConfigValue("Supply", "Set_PUBGDept_AmmoGrenadesValue", 1, -2, 10, "STRING:Set Ammo/Grenade Gain", "STRING:Scavengers - Set Ammo/Grenade Gain.");
             this.ModData.AddConfigValue("Supply", "Set_PUBGDept_ArmorWeaponsValue", 1, -2, 10, "STRING:Set Gear Gain", "STRING:Scavengers - Set Weapon/Armor Gain.");
+            this.ModData.AddConfigValue("Supply", "Set_PUBGDept_Fridge_Store_Custom_RowValue", 4, 4, 400, "STRING:Set Fridge Row", "STRING:Scavengers - Set Fridge Row.");
             // Supply - Recycling
             this.ModData.AddConfigValue("Supply", "about_STCON", "STRING:[ <color=#FFFEC1>Supply - Recycling</color> ]\n");
-            Data.MagnumDefaultValues.TryGetValue(MagnumParameter.STCONDisassemblyItemsSpeed, out temp_result);
+            //Data.MagnumDefaultValues.TryGetValue(MagnumParameter.STCONDisassemblyItemsSpeed, out temp_result);
+
+            temp_result = 336;
             this.ModData.AddConfigValue("Supply", "Set_STCONDept_DisaSpeed", (int)temp_result, 1, (int)temp_result, "STRING:Set Disassembly Speed", "STRING:Recycling - Set Disassembly Speed.");
             this.ModData.AddConfigValue("Supply", "Set_STCONDept_MoreComps", 0, -2, 20, "STRING:Set More Resource Gain", "STRING:Recycling - Set More Resource Gain. (Disassembling 1 ammo will give +x gunpowder)");
             this.ModData.AddConfigValue("Supply", "Set_STCONDept_AdditMDComp", 0, -2, 10, "STRING:Set Extra Resource Gain", "STRING:Recycling - Set Extra Resource Gain. (Disassembling 1 ammo will give +x [random trash item])");

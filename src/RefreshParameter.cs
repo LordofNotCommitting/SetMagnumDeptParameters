@@ -20,6 +20,7 @@ namespace SetMagnumDeptParameters
             {
                 magnumDepartment.OnPerksUpdated();
             }
+            
         }
     }
 }

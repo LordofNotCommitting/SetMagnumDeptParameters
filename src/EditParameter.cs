@@ -52,10 +52,10 @@ namespace SetMagnumDeptParameters
         // Research - Pacts
         // coming soon, I hope.
         // Research - Travel
-        static int Set_BRENGDept_Cooldown = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_Cooldown", 336);
-        static int Set_BRENGDept_TimeLimit = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_TimeLimit", 600);
-        static int Set_BRENGDept_DescentPortalDistance = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_DescentPortalDistance", 32);
-        static int Set_BRENGDept_DescentStartFloor = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_DescentStartFloor", 1);
+        static int Set_BRENGDept_Cooldown = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_Cooldown_Two", 336);
+        static int Set_BRENGDept_TimeLimit = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_TimeLimit_Two", 600);
+        static int Set_BRENGDept_DescentPortalDistance = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_DescentPortalDistance_Two", 32);
+        static int Set_BRENGDept_DescentStartFloor = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_BRENGDept_DescentStartFloor_Two", 1);
 
         // Hanger - Capsule
         static int Set_AUCAPDept_Cooldown = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_AUCAPDept_Cooldown", 24);

@@ -29,7 +29,6 @@ namespace SetMagnumDeptParameters
                 __instance.CapsuleStorage.TryPutItem(item, CellPosition.Zero, false, true);
             }
 
-
         }
     }
 }
