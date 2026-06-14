@@ -16,9 +16,15 @@ namespace SetMagnumDeptParameters
         static int Set_PUBGDept_Fridge_Store_Custom_RowValue = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_PUBGDept_Fridge_Store_Custom_RowValue", 1);
         static bool fridge_setup = false;
 
+
+        public static void EnforceValueCap()
+        {
+            Set_PUBGDept_Fridge_Store_Custom_RowValue = Math.Min(Set_PUBGDept_Fridge_Store_Custom_RowValue, ModConfigGeneral.Set_PUBGDept_Fridge_Store_Custom_RowValue_Array[2]);
+        }
+
         public static void Postfix(MagnumCargo magnumCargo, MagnumProgression magnumSpaceship, SpaceTime spaceTime)
         {
-            
+            EnforceValueCap();
             int FridgeInventoryRow = Set_PUBGDept_Fridge_Store_Custom_RowValue;
 
             if (!fridge_setup) {

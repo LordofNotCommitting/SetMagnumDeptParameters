@@ -28,24 +28,19 @@ namespace SetMagnumDeptParameters
         // Navigation - proxy company
         static int Set_PRCODept_ProdSpeed_Perc = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_PRCODept_ProdSpeed_Perc", 100);
         static int Set_PRCODept_MissMult_Perc = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_PRCODept_MissMult_Perc", 100);
-        static float Set_PRCODept_ProdSpeed = ((float)Set_PRCODept_ProdSpeed_Perc) / 100f;
-        static float Set_PRCODept_MissMult = ((float)Set_PRCODept_MissMult_Perc) / 100f;
 
         // Engineering - Weaponry
         static int Set_WPSTDept_CostReduce = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_WPSTDept_CostReduce", 0);
         static int Set_WPSTDept_ProjSlot = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_WPSTDept_ProjSlot", 1);
         static int Set_WPSTDept_UpgradeCap_Perc = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_WPSTDept_UpgradeCap_Perc", 0);
-        static float Set_WPSTDept_UpgradeCap = ((float)Set_WPSTDept_UpgradeCap_Perc) / 100f;
 
         // Engineering - Arsenal
         static int Set_ARMSTDept_CostReduce = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_ARMSTDept_CostReduce", 0);
         static int Set_ARMSTDept_ProjSlot = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_ARMSTDept_ProjSlot", 1);
         static int Set_ARMSTDept_UpgradeCap_Perc = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_ARMSTDept_UpgradeCap_Perc", 0);
-        static float Set_ARMSTDept_UpgradeCap = ((float)Set_ARMSTDept_UpgradeCap_Perc) / 100f;
 
         // Engineering - Augmetics
         static int Set_AGSTDept_ImpGainOnAmp_Perc = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_AGSTDept_ImpGainOnAmp_Perc", 15);
-        static float Set_AGSTDept_ImpGainOnAmp = ((float)Set_AGSTDept_ImpGainOnAmp_Perc) / 100f;
 
         // Research - Classes
         static int Set_MEMDFDept_ClassSlot = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_MEMDFDept_ClassSlot", 1);
@@ -86,10 +81,67 @@ namespace SetMagnumDeptParameters
         static int Set_STCONDept_MoreComps = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_STCONDept_MoreComps", 0);
         static int Set_STCONDept_AdditMDComp = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_STCONDept_AdditMDComp", 0);
 
+        public static void EnforceValueCap() {
+            //final solution to prevent version change from screwing up variable to really high valSet_NewsDept_Cooldown = Math.Min(Set_NewsDept_Cooldown, ModConfigGeneral.Set_NewsDept_Cooldown_Array[2]);
+            Set_NewsDept_RewardPointPF = Math.Min(Set_NewsDept_RewardPointPF, ModConfigGeneral.Set_NewsDept_RewardPointPF_Array[2]);
+            Set_NewsDept_RepBonus = Math.Min(Set_NewsDept_RepBonus, ModConfigGeneral.Set_NewsDept_RepBonus_Array[2]);
 
+            Set_HWSDept_ScanRange = Math.Min(Set_HWSDept_ScanRange, ModConfigGeneral.Set_HWSDept_ScanRange_Array[2]);
+            Set_HWSDept_EnemyPointPF = Math.Min(Set_HWSDept_EnemyPointPF, ModConfigGeneral.Set_HWSDept_EnemyPointPF_Array[2]);
+            Set_HWSDept_ItemPointPM = Math.Min(Set_HWSDept_ItemPointPM, ModConfigGeneral.Set_HWSDept_ItemPointPM_Array[2]);
+            Set_HWSDept_ItemLevel = Math.Min(Set_HWSDept_ItemLevel, ModConfigGeneral.Set_HWSDept_ItemLevel_Array[2]);
+
+            Set_PRCODept_ProdSpeed_Perc = Math.Min(Set_PRCODept_ProdSpeed_Perc, ModConfigGeneral.Set_PRCODept_ProdSpeed_Perc_Array[2]);
+            Set_PRCODept_MissMult_Perc = Math.Min(Set_PRCODept_MissMult_Perc, ModConfigGeneral.Set_PRCODept_MissMult_Perc_Array[2]);
+
+            Set_PRCODept_ProdSpeed_Perc = Math.Min(Set_PRCODept_ProdSpeed_Perc, ModConfigGeneral.Set_PRCODept_ProdSpeed_Perc_Array[2]);
+            Set_PRCODept_MissMult_Perc = Math.Min(Set_PRCODept_MissMult_Perc, ModConfigGeneral.Set_PRCODept_MissMult_Perc_Array[2]);
+
+
+            Set_WPSTDept_CostReduce = Math.Min(Set_WPSTDept_CostReduce, ModConfigGeneral.Set_WPSTDept_CostReduce_Array[2]);
+            Set_WPSTDept_ProjSlot = Math.Min(Set_WPSTDept_ProjSlot, ModConfigGeneral.Set_WPSTDept_ProjSlot_Array[2]);
+            Set_WPSTDept_UpgradeCap_Perc = Math.Min(Set_WPSTDept_UpgradeCap_Perc, ModConfigGeneral.Set_WPSTDept_UpgradeCap_Perc_Array[2]);
+
+            Set_ARMSTDept_CostReduce = Math.Min(Set_ARMSTDept_CostReduce, ModConfigGeneral.Set_ARMSTDept_CostReduce_Array[2]);
+            Set_ARMSTDept_ProjSlot = Math.Min(Set_ARMSTDept_ProjSlot, ModConfigGeneral.Set_ARMSTDept_ProjSlot_Array[2]);
+            Set_ARMSTDept_UpgradeCap_Perc = Math.Min(Set_ARMSTDept_UpgradeCap_Perc, ModConfigGeneral.Set_ARMSTDept_UpgradeCap_Perc_Array[2]);
+
+            Set_AGSTDept_ImpGainOnAmp_Perc = Math.Min(Set_AGSTDept_ImpGainOnAmp_Perc, ModConfigGeneral.Set_AGSTDept_ImpGainOnAmp_Perc_Array[2]);
+
+            Set_MEMDFDept_ClassSlot = Math.Min(Set_MEMDFDept_ClassSlot, ModConfigGeneral.Set_MEMDFDept_ClassSlot_Array[2]);
+            Set_BRENGDept_Cooldown = Math.Min(Set_BRENGDept_Cooldown, ModConfigGeneral.Set_BRENGDept_Cooldown_Two_Array[2]);
+            Set_BRENGDept_TimeLimit = Math.Min(Set_BRENGDept_TimeLimit, ModConfigGeneral.Set_BRENGDept_TimeLimit_Two_Array[2]);
+            Set_BRENGDept_DescentPortalDistance = Math.Min(Set_BRENGDept_DescentPortalDistance, ModConfigGeneral.Set_BRENGDept_DescentPortalDistance_Two_Array[2]);
+            Set_BRENGDept_DescentStartFloor = Math.Min(Set_BRENGDept_DescentStartFloor, ModConfigGeneral.Set_BRENGDept_DescentStartFloor_Two_Array[2]);
+            Set_AUCAPDept_Cooldown = Math.Min(Set_AUCAPDept_Cooldown, ModConfigGeneral.Set_AUCAPDept_Cooldown_Array[2]);
+            Set_CGSHSTDept_RowValue = Math.Min(Set_CGSHSTDept_RowValue, ModConfigGeneral.Set_CGSHSTDept_RowValue_Array[2]);
+            //Set_TRDSHDept_Cooldown = Math.Min(Set_TRDSHDept_Cooldown, ModConfigGeneral.Set_TRDSHDept_Cooldown_Array[2]);
+            //Set_TRDSHDept_TravelSpeed = Math.Min(Set_TRDSHDept_TravelSpeed, ModConfigGeneral.Set_TRDSHDept_TravelSpeed_Array[2]);
+
+            Set_PUBGDept_ResourcesValue = Math.Min(Set_PUBGDept_ResourcesValue, ModConfigGeneral.Set_PUBGDept_ResourcesValue_Array[2]);
+            Set_PUBGDept_FoodMedsValue = Math.Min(Set_PUBGDept_FoodMedsValue, ModConfigGeneral.Set_PUBGDept_FoodMedsValue_Array[2]);
+            Set_PUBGDept_AmmoGrenadesValue = Math.Min(Set_PUBGDept_AmmoGrenadesValue, ModConfigGeneral.Set_PUBGDept_AmmoGrenadesValue_Array[2]);
+            Set_PUBGDept_ArmorWeaponsValue = Math.Min(Set_PUBGDept_ArmorWeaponsValue, ModConfigGeneral.Set_PUBGDept_ArmorWeaponsValue_Array[2]);
+            Set_STCONDept_DisaSpeed = Math.Min(Set_STCONDept_DisaSpeed, ModConfigGeneral.Set_STCONDept_DisaSpeed_Array[2]);
+            Set_STCONDept_MoreComps = Math.Min(Set_STCONDept_MoreComps, ModConfigGeneral.Set_STCONDept_MoreComps_Array[2]);
+            Set_STCONDept_AdditMDComp = Math.Min(Set_STCONDept_AdditMDComp, ModConfigGeneral.Set_STCONDept_AdditMDComp_Array[2]);
+
+        }
 
         public static void Postfix(MagnumParameter spaceshipParameter, MagnumProgression __instance, ref float __result)
         {
+            EnforceValueCap();
+
+
+            float Set_PRCODept_ProdSpeed = ((float)Set_PRCODept_ProdSpeed_Perc) / 100f;
+            float Set_PRCODept_MissMult = ((float)Set_PRCODept_MissMult_Perc) / 100f;
+            //Plugin.Logger.Log("Set_PRCODept_ProdSpeed:" + Set_PRCODept_ProdSpeed);
+            //Plugin.Logger.Log("Set_PRCODept_MissMult:" + Set_PRCODept_MissMult);
+
+
+            float Set_WPSTDept_UpgradeCap = ((float)Set_WPSTDept_UpgradeCap_Perc) / 100f;
+            float Set_ARMSTDept_UpgradeCap = ((float)Set_ARMSTDept_UpgradeCap_Perc) / 100f;
+            float Set_AGSTDept_ImpGainOnAmp = ((float)Set_AGSTDept_ImpGainOnAmp_Perc) / 100f;
 
             float temp_result = 0f;
             Data.MagnumDefaultValues.TryGetValue(spaceshipParameter, out temp_result);
@@ -98,7 +150,7 @@ namespace SetMagnumDeptParameters
             float set_value = 1f;
 
             bool chosen_value = false;
-
+            //Plugin.Logger.Log("AAAAAAAAAAA" + spaceshipParameter.ToString());
 
             switch (spaceshipParameter) {
                 // Navigation - monitoring
@@ -254,6 +306,7 @@ namespace SetMagnumDeptParameters
                         break;
                     }
                 // Hanger - Trade
+                /*
                 case MagnumParameter.TRDSHShuttleRestoreSpeed:
                     {
                         set_value = Set_TRDSHDept_Cooldown;
@@ -266,6 +319,7 @@ namespace SetMagnumDeptParameters
                         set_val = true;
                         break;
                     }
+                */
                 // Supply - Scavengers
                 case MagnumParameter.PUBGBonusResources:
                     {
