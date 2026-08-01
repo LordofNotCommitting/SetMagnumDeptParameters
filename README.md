@@ -30,8 +30,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3383704898
 As this impact a lot of parameters I'd assume there would be at least few issues on extreme value settings. Please report them here.
 
 Changelog:
+
 v1.2:
-Now includes all variables of 1.o release. And clone upgrade cost reduction.
+Now includes all variables of 1.0 release. And clone upgrade cost reduction.
 
 v1.12:
 Defauly values updated to current unstable version. Also able to see default value when you hold your cursor over the variables in MCM menu.
