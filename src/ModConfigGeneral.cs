@@ -27,15 +27,23 @@ namespace SetMagnumDeptParameters
 
         public static int[] Set_WPSTDept_CostReduce_Array = new int[] { 0, -600, 0 };
         public static int[] Set_WPSTDept_ProjSlot_Array = new int[] { 2, 2, 30 };
-        public static int[] Set_WPSTDept_UpgradeCap_Perc_Array = new int[] { 0, 0, 1000 };
+        public static int[] Set_WPSTDept_UpgradeCap_Perc_Array = new int[] { 0, 0, 3900 };
 
         public static int[] Set_ARMSTDept_CostReduce_Array = new int[] { 0, -600, 0 };
         public static int[] Set_ARMSTDept_ProjSlot_Array = new int[] { 4, 4, 30 };
-        public static int[] Set_ARMSTDept_UpgradeCap_Perc_Array = new int[] { 0, 0, 1000 };
+        public static int[] Set_ARMSTDept_UpgradeCap_Perc_Array = new int[] { 0, 0, 3900 };
 
         public static int[] Set_AGSTDept_ImpGainOnAmp_Perc_Array = new int[] { 5, 5, 100 };
 
         public static int[] Set_MEMDFDept_ClassSlot_Array = new int[] { 2, 2, 20 };
+
+
+        public static int[] Set_MORANLDept_PactUpgrade_Power_Array = new int[] { 0, 0, 2000 };
+        public static int[] Set_MORANLDept_PactUpgrade_Stability_Array = new int[] { 0, 0, 400 };
+        public static int[] Set_MORANLDept_Quasi_Drop_Perc_Array = new int[] { 0, 0, 100 };
+        public static int[] Set_MORANLDept_Pact_Discount_Perc_Array = new int[] { 0, -100, 0 };
+        public static int[] Set_MORANLDept_Pact_Recovery_Array = new int[] { 0, -1200, 0 };
+
 
         public static int[] Set_BRENGDept_Cooldown_Two_Array = new int[] { 336, 1, 336 };
         public static int[] Set_BRENGDept_TimeLimit_Two_Array = new int[] { 400, 400, 6000 };
@@ -57,12 +65,21 @@ namespace SetMagnumDeptParameters
         public static int[] Set_STCONDept_AdditMDComp_Array = new int[] { 0, -2, 10 };
 
 
+        public static int[] Set_TRDSHDept_Shuttle_Cargo_Rows_Array = new int[] { 4, 4, 60 };
+        public static int[] Set_TRDSHDept_Shuttle_Move_Speed_Array = new int[] { 344, 1, 344 };
+        public static int[] Set_TRDSHDept_Reputation_Value_Perc_Array = new int[] { 1, 1, 100 };
+        public static int[] Set_TRDSHDept_Unsupported_Items_Value_Perc_Array = new int[] { 20, 20, 80 };
+        public static int[] Set_TRDSHDept_Value_Of_Shuttle_Items_Perc_Array = new int[] { 0, 0, 500 };
 
+
+
+
+        public static int[] Set_GNEDDept_CostReduce_Array = new int[] { 0, -600, 0 };
+        
 
         public ModConfigGeneral(string ModName, string ConfigPath)
         {
 
-            float temp_result = 0f;
             this.ModName = ModName;
             this.ModData = new ModConfigData(ConfigPath);
             this.ModData.AddConfigHeader("STRING:General Settings", "general");
@@ -109,8 +126,14 @@ namespace SetMagnumDeptParameters
             this.ModData.AddConfigValue("Research", "about_MEMDF", "STRING:[ <color=#FFFEC1>Research - Classes</color> ]\n");
             this.ModData.AddConfigValue("Research", "Set_MEMDFDept_ClassSlot", Set_MEMDFDept_ClassSlot_Array[0], Set_MEMDFDept_ClassSlot_Array[1], Set_MEMDFDept_ClassSlot_Array[2], "STRING:Set Project Slot", "STRING:Classes - Set Project Slot #. \nDefault value:" + Set_MEMDFDept_ClassSlot_Array[0]);
             // Research - Pacts
-            this.ModData.AddConfigValue("Research", "about_MORANL", "STRING:[ <color=#FFFEC1>Research - Pacts (In Proggress)</color> ]\n");
-            this.ModData.AddConfigValue("Research", "about_MORANL2", "STRING:N/A\n");
+            this.ModData.AddConfigValue("Research", "about_MORANL", "STRING:[ <color=#FFFEC1>Research - Pacts</color> ]\n");
+            this.ModData.AddConfigValue("Research", "Set_MORANLDept_PactUpgrade_Power", Set_MORANLDept_PactUpgrade_Power_Array[0], Set_MORANLDept_PactUpgrade_Power_Array[1], Set_MORANLDept_PactUpgrade_Power_Array[2], "STRING:Set Pact Upgrade Essence", "STRING:Pact - Bonus additional Essence during pact Upgrade. \nDefault value:" + Set_MORANLDept_PactUpgrade_Power_Array[0]);
+            this.ModData.AddConfigValue("Research", "Set_MORANLDept_PactUpgrade_Stability", Set_MORANLDept_PactUpgrade_Stability_Array[0], Set_MORANLDept_PactUpgrade_Stability_Array[1], Set_MORANLDept_PactUpgrade_Stability_Array[2], "STRING:Set Pact Upgrade Stability", "STRING:Pact - Bonus additional Stability during pact Upgrade. \nDefault value:" + Set_MORANLDept_PactUpgrade_Stability_Array[0]);
+            this.ModData.AddConfigValue("Research", "Set_MORANLDept_Quasi_Drop_Perc", Set_MORANLDept_Quasi_Drop_Perc_Array[0], Set_MORANLDept_Quasi_Drop_Perc_Array[1], Set_MORANLDept_Quasi_Drop_Perc_Array[2], "STRING:Set % Additional Quasi Drop", "STRING:Pact - Bonus % to drop quasi material from 1 already amputated body part from quasi upon kill. \nDefault value:" + Set_MORANLDept_Quasi_Drop_Perc_Array[0]);
+            this.ModData.AddConfigValue("Research", "Set_MORANLDept_Pact_Discount_Perc", Set_MORANLDept_Pact_Discount_Perc_Array[0], Set_MORANLDept_Pact_Discount_Perc_Array[1], Set_MORANLDept_Pact_Discount_Perc_Array[2], "STRING:Set % Pact Cost Discount", "STRING:Pact - Reduced cost for pact use. \nDefault value:" + Set_MORANLDept_Pact_Discount_Perc_Array[0]);
+            this.ModData.AddConfigValue("Research", "Set_MORANLDept_Pact_Recovery", Set_MORANLDept_Pact_Recovery_Array[0], Set_MORANLDept_Pact_Recovery_Array[1], Set_MORANLDept_Pact_Recovery_Array[2], "STRING:Set Pact Bane Recovery", "STRING:Pact - Bane Reduction per mission. \nDefault value:" + Set_MORANLDept_Pact_Recovery_Array[0]);
+
+
             // Research - Travel
             this.ModData.AddConfigValue("Research", "about_BRENG", "STRING:[ <color=#FFFEC1>Research - Travel</color> ]\n");
 
@@ -132,14 +155,18 @@ namespace SetMagnumDeptParameters
             this.ModData.AddConfigValue("Hanger", "Set_CGSHSTDept_RowValue", Set_CGSHSTDept_RowValue_Array[0], Set_CGSHSTDept_RowValue_Array[1], Set_CGSHSTDept_RowValue_Array[2], "STRING:Set Shuttle Row", "STRING:Shuttle - Set Shuttle Row. \nDefault value:" + Set_CGSHSTDept_RowValue_Array[0]);
             // Hanger - Trade
             this.ModData.AddConfigValue("Hanger", "about_TRDSH", "STRING:[ <color=#FFFEC1>Hanger - Trade</color> ]\n");
+            this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_Shuttle_Cargo_Rows", Set_TRDSHDept_Shuttle_Cargo_Rows_Array[0], Set_TRDSHDept_Shuttle_Cargo_Rows_Array[1], Set_TRDSHDept_Shuttle_Cargo_Rows_Array[2], "STRING:Set Trade Shuttle Cargo Row", "STRING:Trade - Cargo Row For Trade Shuttle. \nDefault value:" + Set_TRDSHDept_Shuttle_Cargo_Rows_Array[0]);
+            this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_Shuttle_Move_Speed", Set_TRDSHDept_Shuttle_Move_Speed_Array[0], Set_TRDSHDept_Shuttle_Move_Speed_Array[1], Set_TRDSHDept_Shuttle_Move_Speed_Array[2], "STRING:Set Trade Shuttle Speed", "STRING:Trade - Trade speed For Trade Shuttle. \nDefault value:" + Set_TRDSHDept_Shuttle_Move_Speed_Array[0]);
+            this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_Reputation_Value_Perc", Set_TRDSHDept_Reputation_Value_Perc_Array[0], Set_TRDSHDept_Reputation_Value_Perc_Array[1], Set_TRDSHDept_Reputation_Value_Perc_Array[2], "STRING:Set Rep Ratio gain for Trading", "STRING:Trade - Reputation Gain ratio for Trading. \nDefault value:" + Set_TRDSHDept_Reputation_Value_Perc_Array[0]);
+            this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_Unsupported_Items_Value_Perc", Set_TRDSHDept_Unsupported_Items_Value_Perc_Array[0], Set_TRDSHDept_Unsupported_Items_Value_Perc_Array[1], Set_TRDSHDept_Unsupported_Items_Value_Perc_Array[2], "STRING:Set Unneeded Goods Price %", "STRING:Trade - % of Unneeded Goods Price. \nDefault value:" + Set_TRDSHDept_Unsupported_Items_Value_Perc_Array[0]);
+            this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_Value_Of_Shuttle_Items_Perc", Set_TRDSHDept_Value_Of_Shuttle_Items_Perc_Array[0], Set_TRDSHDept_Value_Of_Shuttle_Items_Perc_Array[1], Set_TRDSHDept_Value_Of_Shuttle_Items_Perc_Array[2], "STRING:Increased Shipment value %", "STRING:Trade - % increase of shipment value. \nDefault value:" + Set_TRDSHDept_Value_Of_Shuttle_Items_Perc_Array[0]);
 
-            this.ModData.AddConfigValue("Hanger", "about_TRDSH2", "STRING:Temporarily disabled it to make it beta compatible.\n");
+
+
             //Data.MagnumDefaultValues.TryGetValue(MagnumParameter.TRDSHShuttleRestoreSpeed, out temp_result);
 
-            temp_result = 24;
             //this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_Cooldown", (int)temp_result, 1, (int)temp_result, "STRING:Set Trade Shuttle CD", "STRING:Trade - Set Trade Shuttle Cooldown.");
 
-            temp_result = 96;
             //this.ModData.AddConfigValue("Hanger", "Set_TRDSHDept_TravelSpeed", (int)temp_result, 1, (int)temp_result, "STRING:Set Trade Shuttle MoveTime", "STRING:Trade - Set Trade Shuttle Delivery Time.");
 
 
@@ -147,7 +174,7 @@ namespace SetMagnumDeptParameters
             this.ModData.AddConfigHeader("STRING:Cloning", "Cloning");
             // Cloning - Genome
             this.ModData.AddConfigValue("Cloning", "about_GNED", "STRING:[ <color=#FFFEC1>Cloning - Genome</color> ]\n");
-            this.ModData.AddConfigValue("Cloning", "about_GNED2", "STRING:Nothing to improve.\n");
+            this.ModData.AddConfigValue("Cloning", "Set_GNEDDept_CostReduce", Set_GNEDDept_CostReduce_Array[0], Set_GNEDDept_CostReduce_Array[1], Set_GNEDDept_CostReduce_Array[2], "STRING:Set Cost Reduction", "STRING:Cloning - Set Clone Upgrade Cost Reduction. \nDefault value:" + Set_GNEDDept_CostReduce_Array[0]);
             // Cloning - Training
             this.ModData.AddConfigValue("Cloning", "about_TRCN", "STRING:[ <color=#FFFEC1>Cloning - Training</color> ]\n");
             this.ModData.AddConfigValue("Cloning", "about_TRCN2", "STRING:Nothing to improve.\n");
