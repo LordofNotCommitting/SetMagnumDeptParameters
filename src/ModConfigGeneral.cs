@@ -13,7 +13,7 @@ namespace SetMagnumDeptParameters
 
         // ====== combined ======
         // default, min, max value respectively
-        public static int[] Set_NewsDept_Cooldown_Array = new int[] { 168, 1, 168 };
+        public static int[] Set_NewsDept_Cooldown_Array = new int[] { 504, 1, 504 };
         public static int[] Set_NewsDept_RewardPointPF_Array = new int[] { 0, 0, 1000 };
         public static int[] Set_NewsDept_RepBonus_Array = new int[] { 0, 0, 100 };
 
