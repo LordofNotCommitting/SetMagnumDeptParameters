@@ -31,6 +31,9 @@ As this impact a lot of parameters I'd assume there would be at least few issues
 
 Changelog:
 
+v1.21:
+Updated the mod so it includes properly nerfed monitoring Cooldown
+
 v1.2:
 Now includes all variables of 1.0 release. And clone upgrade cost reduction.
 
