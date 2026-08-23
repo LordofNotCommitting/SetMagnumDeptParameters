@@ -31,6 +31,9 @@ As this impact a lot of parameters I'd assume there would be at least few issues
 
 Changelog:
 
+v1.22:
+After several tries. Those trade shuttle size are TINY. Raised the cap on those to 600 rows.
+
 v1.21:
 Updated the mod so it includes properly nerfed monitoring Cooldown
 
