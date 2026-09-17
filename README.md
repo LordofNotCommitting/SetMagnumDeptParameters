@@ -31,6 +31,10 @@ As this impact a lot of parameters I'd assume there would be at least few issues
 
 Changelog:
 
+v1.23:
+Increased the project cap by like x4 times.
+Also added clone project cap for more merc mod.
+
 v1.22:
 After several tries. Those trade shuttle size are TINY. Raised the cap on those to 600 rows.
 
