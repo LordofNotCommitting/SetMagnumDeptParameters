@@ -72,7 +72,8 @@ namespace SetMagnumDeptParameters
 
 
         // Cloning - Genome
-        // No improvements to be made.
+        static int Set_GNEDDept_ProjSlot = Plugin.ConfigGeneral.ModData.GetConfigValue<int>("Set_GNEDDept_ProjSlot", ModConfigGeneral.Set_GNEDDept_ProjSlot_Array[0]);
+
         // Cloning - Training
         // No improvements to be made.
         // Cloning - Capacitor
@@ -152,6 +153,8 @@ namespace SetMagnumDeptParameters
             Set_STCONDept_MoreComps = Math.Min(Set_STCONDept_MoreComps, ModConfigGeneral.Set_STCONDept_MoreComps_Array[2]);
             Set_STCONDept_AdditMDComp = Math.Min(Set_STCONDept_AdditMDComp, ModConfigGeneral.Set_STCONDept_AdditMDComp_Array[2]);
 
+            Set_GNEDDept_ProjSlot = Math.Min(Set_GNEDDept_ProjSlot, ModConfigGeneral.Set_GNEDDept_ProjSlot_Array[2]);
+            
         }
 
         public static void Postfix(MagnumParameter spaceshipParameter, MagnumProgression __instance, ref float __result)
@@ -401,6 +404,13 @@ namespace SetMagnumDeptParameters
                 case MagnumParameter.TRDSHValueOfShuttleItems:
                     {
                         set_value = Set_TRDSHDept_Value_Of_Shuttle_Items;
+                        set_val = true;
+                        break;
+                    }
+                // Cloning - Genome
+                case MagnumParameter.GNEDOperatorsToUpgrade:
+                    {
+                        set_value = Set_GNEDDept_ProjSlot;
                         set_val = true;
                         break;
                     }

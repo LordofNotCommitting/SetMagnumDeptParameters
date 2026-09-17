@@ -26,11 +26,11 @@ namespace SetMagnumDeptParameters
         public static int[] Set_PRCODept_MissMult_Perc_Array = new int[] { 100, 0, 1000 };
 
         public static int[] Set_WPSTDept_CostReduce_Array = new int[] { 0, -600, 0 };
-        public static int[] Set_WPSTDept_ProjSlot_Array = new int[] { 2, 2, 30 };
+        public static int[] Set_WPSTDept_ProjSlot_Array = new int[] { 2, 2, 120 };
         public static int[] Set_WPSTDept_UpgradeCap_Perc_Array = new int[] { 0, 0, 3900 };
 
         public static int[] Set_ARMSTDept_CostReduce_Array = new int[] { 0, -600, 0 };
-        public static int[] Set_ARMSTDept_ProjSlot_Array = new int[] { 4, 4, 30 };
+        public static int[] Set_ARMSTDept_ProjSlot_Array = new int[] { 4, 4, 240 };
         public static int[] Set_ARMSTDept_UpgradeCap_Perc_Array = new int[] { 0, 0, 3900 };
 
         public static int[] Set_AGSTDept_ImpGainOnAmp_Perc_Array = new int[] { 5, 5, 100 };
@@ -74,6 +74,7 @@ namespace SetMagnumDeptParameters
 
 
 
+        public static int[] Set_GNEDDept_ProjSlot_Array = new int[] { 1, 1, 80 };
         public static int[] Set_GNEDDept_CostReduce_Array = new int[] { 0, -600, 0 };
         
 
@@ -175,6 +176,9 @@ namespace SetMagnumDeptParameters
             // Cloning - Genome
             this.ModData.AddConfigValue("Cloning", "about_GNED", "[ <color=#FFFEC1>Cloning - Genome</color> ]\n");
             this.ModData.AddConfigValue("Cloning", "Set_GNEDDept_CostReduce", Set_GNEDDept_CostReduce_Array[0], Set_GNEDDept_CostReduce_Array[1], Set_GNEDDept_CostReduce_Array[2], "Set Cost Reduction", "Cloning - Set Clone Upgrade Cost Reduction. \nDefault value:" + Set_GNEDDept_CostReduce_Array[0]);
+            this.ModData.AddConfigValue("Cloning", "Set_GNEDDept_ProjSlot", Set_GNEDDept_ProjSlot_Array[0], Set_GNEDDept_ProjSlot_Array[1], Set_GNEDDept_ProjSlot_Array[2], "Set Project Slot", "Cloning - Set Clone Project count, if you are modding and have more Merc than vanilla count. \nDefault value:" + Set_GNEDDept_ProjSlot_Array[0]);
+
+            
             // Cloning - Training
             this.ModData.AddConfigValue("Cloning", "about_TRCN", "[ <color=#FFFEC1>Cloning - Training</color> ]\n");
             this.ModData.AddConfigValue("Cloning", "about_TRCN2", "Nothing to improve.\n");
